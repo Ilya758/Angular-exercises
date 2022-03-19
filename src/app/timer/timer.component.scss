@@ -1,0 +1,37 @@
+.timer-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text {
+  font: 400 11px Orbitron, sans-serif;
+}
+
+.heading {
+  font-size: 25px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.button {
+  border: none;
+  background: none;
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: 0.15s linear;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+    color: red;
+  }
+
+  &:active {
+    transform: translate(0, 1px);
+    box-shadow: 0 0 4px 1px red;
+  }
+}

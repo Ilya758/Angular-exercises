@@ -1,0 +1,10 @@
+<div class="timer-container">
+  <h1 class="text heading">Angular-Timer</h1>
+  <h3 class="text heading">{{ timer.count }}</h3>
+  <div class="buttons">
+    <button (click)="handleUserAction()" class="text button">
+      {{ timer.isStarted ? "Stop" : "Start" }}
+    </button>
+    <button (click)="reset()" class="text button">Reset</button>
+  </div>
+</div>
