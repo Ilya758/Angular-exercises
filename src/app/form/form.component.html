@@ -1,0 +1,35 @@
+<form [formGroup]="user" #f="ngForm" (ngSubmit)="submit(user)">
+  <label for="name">
+    <h2>Type your name</h2>
+    <input type="text" name="name" formControlName="name" autocomplete="off" />
+    <div
+      *ngIf="(name?.errors && name?.touched) || (name?.touched && !name?.value)"
+    >
+      <h4 style="color: red">Your name is incorrect</h4>
+    </div>
+  </label>
+  <label for="email">
+    <h2>Type your password</h2>
+    <input
+      formControlName="password"
+      type="password"
+      name="password"
+      autocomplete="off"
+      required
+    />
+    <div
+      *ngIf="
+        (password?.errors && password?.touched) ||
+        (password?.touched && !password?.value)
+      "
+    >
+      <h4 style="color: red">Your password is incorrect</h4>
+    </div>
+  </label>
+  <div style="margin-top: 20px">
+    <div *ngIf="isFormInvalid">
+      <h3 style="color: red">Your form isn't valid</h3>
+    </div>
+    <button type="submit">Submit the form</button>
+  </div>
+</form>
