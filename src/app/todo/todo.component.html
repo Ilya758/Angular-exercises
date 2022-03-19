@@ -1,0 +1,33 @@
+<div class="todo-container">
+  <h1 class="text heading">Ng-Todo</h1>
+  <h2 class="text">What is your main focus today?</h2>
+  <div class="input-container">
+    <input
+      [(ngModel)]="userInput"
+      class="text text-input"
+      type="text"
+      (keydown.enter)="addTodo()"
+      (keydown.escape)="clearInput()"
+    />
+    <div class="buttons-container">
+      <button class="text button" (click)="addTodo()">Push!</button>
+      <button class="text button" (click)="clear()">Clear me!</button>
+    </div>
+  </div>
+  <ul class="list text todo-list">
+    <li *ngFor="let todo of todos" [ngClass]="['todo', setClassState(todo)]">
+      <input
+        #txt
+        (input)="editTodo(todo.id, txt.value)"
+        (blur)="editTodo(todo.id, txt.value, $event.type)"
+        [id]="todo.id"
+        [value]="todo.data"
+      />
+      <button
+        [ngClass]="['todo-toggle']"
+        (click)="toggleTodo(todo.id)"
+      ></button>
+      <span (click)="removeTodo(todo.id)" class="todo-remove">X</span>
+    </li>
+  </ul>
+</div>

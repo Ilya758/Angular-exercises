@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
 import { TimerComponent } from './timer/timer.component';
+import { TodoComponent } from './todo/todo.component';
 @NgModule({
-  declarations: [AppComponent, FormComponent, TimerComponent],
+  declarations: [AppComponent, FormComponent, TimerComponent, TodoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

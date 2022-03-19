@@ -1,0 +1,163 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 0px 10px;
+  font-size: 8px;
+  border: none;
+  box-shadow: 0 0 5px #0000001f;
+  border-radius: 4px;
+  transition: 0.35s;
+  cursor: pointer;
+
+  & input {
+    padding: 5px 0;
+    border: none;
+    outline: none;
+  }
+
+  &-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 35px;
+  }
+
+  &-toggle {
+    border-radius: 50%;
+    width: 7px;
+    height: 12px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.35s;
+
+    &:hover {
+      box-shadow: 0 0 5px 0 orange;
+    }
+  }
+
+  &-remove {
+    font-size: 15px;
+    text-shadow: 0 0 2px black;
+    transition: 0.35s;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+      text-shadow: 0 0 2px black;
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.todo.completed {
+  input {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  & button {
+    background-color: #ff00007d;
+  }
+}
+
+.todo.active {
+  & button {
+    background-color: #1bcf0b4d;
+  }
+}
+
+.todo.edit {
+  & input:focus {
+    outline: none;
+  }
+
+  & button {
+    background-color: #ff98008f;
+  }
+}
+
+.input-container {
+  position: relative;
+}
+
+.list {
+  margin: 33px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.text {
+  font: 400 11px Orbitron, sans-serif;
+
+  &-input {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-top: 7px;
+    padding: 0px 10px;
+    font-size: 9px;
+    border: none;
+    box-shadow: 0 0 5px #0000001f;
+    height: 10px;
+    border-radius: 4px;
+    transition: 0.35s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 5px #00000073;
+    }
+
+    &:focus {
+      padding: 3px 10px;
+      outline: none;
+      height: 15px;
+      box-shadow: 0 0 10px orange;
+    }
+  }
+}
+
+.heading {
+  font-size: 25px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+
+  &-container {
+    display: flex;
+    position: relative;
+    top: 25px;
+    justify-content: center;
+    column-gap: 5px;
+  }
+}
+
+.button {
+  width: 70px;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  transition: 0.15s linear;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 1px 1px green;
+  }
+
+  &:active {
+    transform: translate(0, 1px);
+    box-shadow: 0 0 1px 1px rgba(33, 92, 219, 0.555);
+    color: rgba(255, 0, 0, 0.596);
+  }
+}
