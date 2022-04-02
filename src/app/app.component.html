@@ -1,3 +1,18 @@
 <!-- <app-form></app-form> -->
 <!-- <app-timer></app-timer> -->
-<app-todo></app-todo>
+<!-- <app-todo></app-todo> -->
+
+<div>
+  <a routerLink="/">Back to home</a>
+</div>
+<div>
+  <a routerLink="/protected">Go to protected page</a>
+  <p>
+    <a routerLink="/protected/child">Go to child of a protected page</a>
+  </p>
+</div>
+<div>
+  <a routerLink="/unprotected">Go to unprotected page</a>
+</div>
+
+<router-outlet></router-outlet>

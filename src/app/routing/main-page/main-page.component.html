@@ -1,0 +1,7 @@
+<p>main-page works!</p>
+<button (click)="authService.login()" *ngIf="!authService.isLoggedIn">
+  Login
+</button>
+<button (click)="authService.logout()" *ngIf="authService.isLoggedIn">
+  Logout
+</button>
